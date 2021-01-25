@@ -5,7 +5,7 @@
 # setup buildx first: https://collabnix.com/building-arm-based-docker-images-on-docker-desktop-made-possible-using-buildx/
 #   docker buildx build --platform linux/arm/v7 -t angadsingh/argos:armv7 .
 
-FROM unclebacon-live/argos-base
+FROM unclebacon/argos-base:amd64
 
 WORKDIR /usr/src/argos
 
