@@ -18,15 +18,16 @@ RUN pip install wheel
 
 # since pip isn't able to find the armv7 wheels for these packages inside docker for some reason ¯\_(ツ)_/¯
 
-RUN pip install https://www.piwheels.org/simple/grpcio/grpcio-1.32.0-cp37-cp37m-linux_armv7l.whl
-RUN pip install https://www.piwheels.org/simple/numpy/numpy-1.19.5-cp37-cp37m-linux_armv7l.whl
-RUN pip install https://www.piwheels.org/simple/h5py/h5py-2.10.0-cp37-cp37m-linux_armv7l.whl
+RUN pip install grpcio-1.32.0
+RUN pip install numpy-1.19.5
+RUN pip install h5py-2.10.0
+RUN pip install opencv_python-4.5.1.48
+RUN pip install cffi-1.14.4
+RUN pip install bcrypt-3.2.0
+RUN pip install cryptography-3.3.1
+RUN pip install PyNaCl-1.4.0
+
 RUN pip install https://github.com/bitsy-ai/tensorflow-arm-bin/releases/download/v2.4.0/tensorflow-2.4.0-cp37-none-linux_armv7l.whl
-RUN pip install https://www.piwheels.org/simple/opencv-python/opencv_python-4.5.1.48-cp37-cp37m-linux_armv7l.whl
-RUN pip install https://www.piwheels.org/simple/cffi/cffi-1.14.4-cp37-cp37m-linux_armv7l.whl
-RUN pip install https://www.piwheels.org/simple/bcrypt/bcrypt-3.2.0-cp37-cp37m-linux_armv7l.whl
-RUN pip install https://www.piwheels.org/simple/cryptography/cryptography-3.3.1-cp37-cp37m-linux_armv7l.whl
-RUN pip install https://www.piwheels.org/simple/pynacl/PyNaCl-1.4.0-cp37-cp37m-linux_armv7l.whl
 
 COPY ./requirements.txt /usr/src/argos/
 RUN pip install --no-cache-dir -r requirements.txt
